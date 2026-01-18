@@ -1,0 +1,36 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bishal Login Page</title>
+<style>
+  body { font-family: Arial, sans-serif; background: #f5f7fa; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+  .login-container { background: #fff; padding: 40px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); width: 300px; text-align: center; }
+  input { width: 100%; padding: 12px; margin: 10px 0; border-radius: 8px; border: 1px solid #ccc; }
+  button { padding: 12px 20px; background: #1e40af; color: white; border: none; border-radius: 8px; cursor: pointer; width: 100%; }
+  button:hover { background: #153c9b; }
+  h2 { color: #1e40af; }
+</style>
+</head>
+<body><div class="login-container">
+  <h2>Login</h2>
+  <form id="loginForm">
+    <input type="text" id="username" placeholder="Username" required>
+    <input type="password" id="password" placeholder="Password" required>
+    <button type="submit">Login</button>
+  </form>
+  <p id="message" style="color:red; margin-top:10px;"></p>
+</div><script>
+// Simple demo login, data captured in browser console
+const loginForm = document.getElementById('loginForm');
+loginForm.addEventListener('submit', function(e) {
+  e.preventDefault();
+  const username = document.getElementById('username').value;
+  const password = document.getElementById('password').value;
+  console.log('Username:', username);
+  console.log('Password:', password);
+  document.getElementById('message').innerText = 'Data captured! Check console (F12).';
+  loginForm.reset();
+});
+</script></body>
+</html>
